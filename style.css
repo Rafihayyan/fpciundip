@@ -146,7 +146,8 @@ body {
 
 .pub-layer {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -254,6 +255,11 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer-logo {
   width: 130px;
   margin-bottom: 16px;
@@ -332,7 +338,6 @@ body {
   color: #666;
   text-align: center;
 }
-
 
 @media (max-width: 768px) {
 
