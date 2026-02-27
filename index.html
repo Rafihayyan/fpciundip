@@ -10,7 +10,6 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="container nav-content">
       <img src="img/LOGO-FPCI-undip2-1.png" class="logo">
@@ -30,7 +29,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-overlay">
       <div class="container hero-text">
@@ -40,7 +38,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="about-short">
     <div class="container about-content">
       <p>
@@ -51,12 +48,9 @@
     </div>
   </section>
 
-  <!-- PUBLICATIONS + EVENTS (Sticky Scroll Transition) -->
-  <!-- Wrapper sangat tinggi agar ada "ruang scroll" untuk transisi -->
   <div class="pub-scroll-wrapper" id="pubScrollWrapper">
     <section class="publications" id="pubSection">
 
-      <!-- Layer 1: Publications (ungu) -->
       <div class="pub-layer" id="layerPublications">
         <div class="container">
           <h2>Publications</h2>
@@ -75,7 +69,6 @@
         </div>
       </div>
 
-      <!-- Layer 2: Events (merah) -->
       <div class="pub-layer" id="layerEvents">
         <div class="container">
           <h2>Event</h2>
@@ -106,7 +99,6 @@
       hamburger.classList.toggle("open");
     });
 
-    // ── Sticky Scroll Transition ──────────────────────────────
     const wrapper    = document.getElementById("pubScrollWrapper");
     const pubSection = document.getElementById("pubSection");
     const layerPub   = document.getElementById("layerPublications");
@@ -116,33 +108,26 @@
 
     function onScroll() {
       const wrapperRect   = wrapper.getBoundingClientRect();
-      const wrapperHeight = wrapper.offsetHeight;      // 200vh
-      const sectionHeight = pubSection.offsetHeight;   // 100vh (viewport)
+      const wrapperHeight = wrapper.offsetHeight;
+      const sectionHeight = pubSection.offsetHeight;
 
-      // Scroll distance that has passed THROUGH the wrapper
-      // 0 = wrapper top just hit viewport top
-      // wrapperHeight - sectionHeight = max scroll = 100vh
       const scrolled = -wrapperRect.top;
       const maxScroll = wrapperHeight - sectionHeight;
 
-      // progress: 0..1 over the full scroll range
       let progress = Math.min(1, Math.max(0, scrolled / maxScroll));
 
-      // ── Layer opacity & transform ──
-      layerPub.style.opacity   = Math.max(0, 1 - progress * 2);          // fade out first half
-      layerPub.style.transform = `translateY(${-progress * 40}px)`;      // drift up
+      layerPub.style.opacity   = Math.max(0, 1 - progress * 2);
+      layerPub.style.transform = `translateY(${-progress * 40}px)`;
 
-      layerEvent.style.opacity   = Math.max(0, (progress - 0.4) / 0.6);  // fade in second half
+      layerEvent.style.opacity   = Math.max(0, (progress - 0.4) / 0.6);
       layerEvent.style.transform = `translateY(${(1 - progress) * 50}px)`;
 
-      // ── Background color: #4b0082 → #922f16 ──
       const r = Math.round(lerp(75,  146, progress));
       const g = Math.round(lerp(0,   47,  progress));
       const b = Math.round(lerp(130, 22,  progress));
       const bg = `rgb(${r},${g},${b})`;
       pubSection.style.backgroundColor = bg;
 
-      // Sync edge-fade color
       document.querySelectorAll(".publication-wrapper").forEach(el => {
         el.style.setProperty("--edge-color", bg);
       });
