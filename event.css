@@ -1,0 +1,211 @@
+/* ACTIVE NAV */
+.nav-links a.active {
+    color: #922f16;
+    font-weight: 600;
+    border-bottom: 2px solid #922f16;
+    padding-bottom: 2px;
+  }
+  
+  /* PAGE HERO */
+  .ev-hero {
+    background: url("img/header-background.png") center/cover no-repeat;
+    height: 320px;
+    position: relative;
+  }
+  
+  .ev-hero-overlay {
+    background: linear-gradient(to top, rgba(146,47,22,0.88), rgba(0,0,0,0.2));
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .ev-hero-text {
+    padding-bottom: 52px;
+    color: #fff;
+  }
+  
+  .ev-hero-sub {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+  
+  .ev-hero-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  
+  /* MAIN */
+  .ev-main {
+    padding: 56px 0 80px;
+    background: #f2f2f2;
+    min-height: 60vh;
+  }
+  
+  /* GRID */
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  
+  /* CARD */
+  .ev-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(22px);
+    animation: evCardIn 0.45s ease forwards;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  
+  .ev-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+  }
+  
+  @keyframes evCardIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* FILTER BAR */
+  .ev-controls-wrap {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 16px 0;
+    position: sticky;
+    top: 64px;
+    z-index: 900;
+  }
+
+  .ev-controls {
+    display: flex;
+    align-items: center;
+  }
+
+  .filter-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    border: 1.5px solid #ddd;
+    background: transparent;
+    padding: 7px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover {
+    border-color: #d84c18;
+    color: #d84c18;
+  }
+
+  .filter-btn.active {
+    background: #d84c18;
+    border-color: #d84c18;
+    color: #fff;
+  }
+
+  .filter-btn.national:hover,
+  .filter-btn.national.active {
+    background: #d84c18;
+    border-color: #d84c18;
+    color: #fff;
+  }
+
+  /* CARD IMAGE */
+  .ev-card-img {
+    height: 200px;
+    background: #e0e0e0;
+    position: relative;
+  }
+
+  .ev-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  /* CARD BODY */
+  .ev-card-body {
+    padding: 28px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .ev-card-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  
+  .ev-card-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+  }
+  
+  .ev-read-btn {
+    display: inline-block;
+    color: #922f16;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .ev-read-btn:hover {
+    color: #4b0082;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .ev-hero-text h1 {
+      font-size: 34px;
+    }
+  
+    .events-grid {
+      grid-template-columns: 1fr;
+    }
+  }
