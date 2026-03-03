@@ -1,0 +1,197 @@
+/* ACTIVE NAV */
+.nav-links a.active {
+    color: #4b0082;
+    font-weight: 600;
+    border-bottom: 2px solid #4b0082;
+    padding-bottom: 2px;
+  }
+  
+  /* HERO */
+  .ct-hero {
+    background: url("img/header-background.png") center/cover no-repeat;
+    height: 320px;
+    position: relative;
+  }
+  
+  .ct-hero-overlay {
+    background: linear-gradient(to top, rgba(75,0,130,0.88), rgba(0,0,0,0.2));
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .ct-hero-text {
+    padding-bottom: 52px;
+    color: #fff;
+  }
+  
+  .ct-hero-sub {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+  
+  .ct-hero-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  
+  /* MAIN */
+  .ct-main {
+    background: #f2f2f2;
+    padding: 60px 0 80px;
+  }
+  
+  /* LAYOUT */
+  .ct-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  
+  /* CONTACT CARDS */
+  .ct-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .ct-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .ct-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+  }
+  
+  .ct-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .ct-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 2px;
+  }
+  
+  .ct-card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+  }
+  
+  .ct-card-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    text-decoration: none;
+    line-height: 1.5;
+    transition: color 0.2s;
+  }
+  
+  a.ct-card-value:hover {
+    color: #4b0082;
+  }
+  
+  .ct-card-sub {
+    font-size: 13px;
+    color: #888;
+  }
+  
+  /* RIGHT COLUMN */
+  .ct-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* MAP */
+  .ct-map-wrap {
+    height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+  
+  /* SOCIALS */
+  .ct-socials {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+  
+  .ct-socials-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 14px;
+  }
+  
+  .ct-socials-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .ct-social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f5f5;
+    border: 1.5px solid #e5e5e5;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  
+  .ct-social-pill:hover {
+    background: #4b0082;
+    border-color: #4b0082;
+    color: #fff;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    .ct-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .ct-hero-text h1 {
+      font-size: 34px;
+    }
+  
+    .ct-map-wrap {
+      height: 240px;
+    }
+  }
