@@ -63,7 +63,7 @@
       </div>
       <div class="footer-nav">
         <span class="footer-nav-title">Navigate</span>
-        <a href="aboutus.html">About Us</a>
+        <a href="index.html">About Us</a>
         <a href="publications.html">Publications</a>
         <a href="events.html">Events</a>
         <a href="contact.html">Contact Us</a>
@@ -177,7 +177,7 @@
           <div class="ev-card-body">
             <h3 class="ev-card-title">${ev.title}</h3>
             <p class="ev-card-desc">${ev.description}</p>
-            <a href="#" class="ev-read-btn">See Details →</a>
+            <a href="event-detail.html?title=${encodeURIComponent(ev.title)}&type=${encodeURIComponent(ev.type)}&date=${encodeURIComponent(ev.date)}&desc=${encodeURIComponent(ev.description)}&img=${encodeURIComponent(ev.img || '')}" class="ev-read-btn">See Details →</a>
           </div>
         `;
         grid.appendChild(card);
@@ -201,6 +201,4 @@
   </script>
 
 </body>
-
 </html>
-
